@@ -20,7 +20,9 @@ app.use(express.static("./src/public"));
 // Lectura y parseo del body
 app.use(express.json());
 
-app.get("/", (req: any, res: any) => res.send("Home page"));
+// Rutas
+app.use("/api/auth", require("./routes/auth"));
+app.use("/api/events", require("./routes/event"));
 
 // Escuchar peticiones
 app.listen(process.env.PORT || 3000, () => {
