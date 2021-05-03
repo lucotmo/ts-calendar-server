@@ -7,7 +7,7 @@ export const generateJWT = (uid: string, name: string) => {
 		//@ts-ignore
 		jwt.sign(
 			payload,
-			process.env.SECRET_JWT_SEED,
+			process.env.JWT_KEY,
 			{
 				expiresIn: "2h",
 			},
